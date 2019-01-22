@@ -16,11 +16,23 @@
 ;; if you do, you should usually rethink your algorithm.
 ;; - amalloy
 
-(defn two-sum? [xs sum]
+(defn index
+  "Returns index where the first element of the seq is the index."
+  [xs]
+  (first xs))
+
+(defn value
+  "Returns value where the second element of the seq is the value."
+  [xs]
+  (second xs))
+
+(defn two-sum?
+  "sum - value of first item in xs can be found in the rest of xs."
+  [xs sum]
   (let [i (first xs)
-        j (- sum i)]
-    (when (some #(= j %) (rest xs))
-      [i j])))
+        j-val (- sum (value i))
+        j (some #(when (= j-val (value %)) %) (rest xs))]
+    (when j [i j])))
 
 (defn maplist
   "Based on Common Lisp's maplist."
@@ -29,15 +41,14 @@
       (cons (f coll)
             (maplist f (rest coll)))))
 
-(defn index-pair
-  "Returns indices of v1 and v2 in xs. We need to do it this way because
-  simply mapping .indexOf can result in a duplicate index if both v1 and v2 are
-  the same value."
-  [xs [v1 v2]]
-  (let [index1 (.indexOf xs v1)
-        index2 (+ 1 index1 (.indexOf (drop (inc index1) xs) v2))]
-    [index1 index2]))
-
-(defn two-sum [xs sum]
-  (->> (some identity (maplist #(two-sum? % sum) xs))
-       (index-pair xs)))
+(defn two-sum
+  "Given an array of integers, return indices of the two numbers such that
+  they add up to a specific target.
+  We assume that each input has exactly one solution, and the same element
+  is only used once."
+  [xs sum]
+  (->> (map-indexed vector xs)
+       (maplist #(two-sum? % sum))
+       (some identity)
+       (map index)
+       (time)))
