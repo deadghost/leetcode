@@ -41,6 +41,17 @@
       (cons (f coll)
             (maplist f (rest coll)))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Solution
+;;==============================================================================
+;; Time complexity: O(n^2)
+;;   For every element, we search through the rest of the sequence to look for
+;;   its complement.
+;; Space complexity: O(n)
+;;   We use `maplist` which is creates elements 1:1 with the length of our
+;;   sequence of integers.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defn two-sum
   "Given an array of integers, return indices of the two numbers such that
   they add up to a specific target.
