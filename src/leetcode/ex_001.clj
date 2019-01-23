@@ -61,5 +61,4 @@
   (->> (map-indexed vector xs)
        (maplist #(two-sum? % sum))
        (some identity)
-       (map index)
-       (time)))
+       (map index)))
