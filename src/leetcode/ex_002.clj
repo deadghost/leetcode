@@ -11,6 +11,16 @@
 ;; number 0 itself.
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Solution
+;;==============================================================================
+;; Time complexity: O(max(m,n))
+;;   The time it takes to compute increases linearly with the length of the max
+;;   of list1 and list2.
+;; Space complexity: O(max(m,n))
+;;   The length of the sum-list is max(m,n) or max(m,n)+1.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defn add-two-numbers
   ([l1 l2] (add-two-numbers l1 l2 '()))
   ([l1 l2 accumulator]
