@@ -1,4 +1,5 @@
-(ns leetcode.ex-001)
+(ns leetcode.ex-001
+  (:require [leetcode.util :refer [maplist]]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Two Sum
@@ -33,13 +34,6 @@
         j-val (- sum (value i))
         j (some #(when (= j-val (value %)) %) (rest xs))]
     (when j [i j])))
-
-(defn maplist
-  "Based on Common Lisp's maplist."
-  [f coll]
-  (if (empty? coll) nil
-      (cons (f coll)
-            (maplist f (rest coll)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Solution
