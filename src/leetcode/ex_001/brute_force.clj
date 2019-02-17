@@ -1,4 +1,4 @@
-(ns leetcode.ex-001
+(ns leetcode.ex-001.brute-force
   (:require [leetcode.util :refer [maplist]]))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

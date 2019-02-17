@@ -1,5 +1,5 @@
-(ns leetcode.ex-001-test
-  (:require [leetcode.ex-001 :as sut]
+(ns leetcode.ex-001.brute-force-test
+  (:require [leetcode.ex-001.hashmap :as sut]
             [clojure.test :as t :refer [deftest is testing]]))
 
 (deftest two-sum-test
