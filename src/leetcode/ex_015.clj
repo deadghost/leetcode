@@ -45,6 +45,17 @@
   (let [m (xs->m xs)]
     (keep #(three-sum? m % sum) xs)))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Solution
+;;==============================================================================
+;; Time complexity: O(n^2)
+;;   We break our problem into a 2sum problem(ex1) using a hashmap. A 2sum
+;;   problem using a hashmap is O(n) for a single sum target. We have n sum
+;;   targets in a 3sum so it is O(n^2).
+;; Space complexity: O(n)
+;;   The number of solutions grow linearly with the array size.
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 (defn three-sum [xs]
   (let [m (xs->m xs)]
     (->> (map #(two-sum xs (* -1 %)) xs) ; invert the target sum
