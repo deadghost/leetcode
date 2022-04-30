@@ -1,16 +1,6 @@
 (ns leetcode.ex-001.brute-force
   (:require [leetcode.util :refer [maplist]]))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Two Sum
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Given an array of integers, return indices of the two numbers such that
-;; they add up to a specific target.
-;; 
-;; You may assume that each input would have exactly one solution, and you
-;; may not use the same element twice.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; Indices are tricky in clojure.
 ;; [...] there's a reason this(position fn) isn't included in clojure.core: it's 
 ;; not very efficient, and you very rarely care about indices in a collection -

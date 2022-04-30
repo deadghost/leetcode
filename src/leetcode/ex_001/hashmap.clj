@@ -1,20 +1,11 @@
 (ns leetcode.ex-001.hashmap)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Two Sum
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Given an array of integers, return indices of the two numbers such that
-;; they add up to a specific target.
-;; 
-;; You may assume that each input would have exactly one solution, and you
-;; may not use the same element twice.
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; Similar to bruteforce except we check the result with a hashmap which
 ;; has much faster lookup time.
 
 ;; We convert the array to a hashmap for cheap lookups at the cost of a one
 ;; time conversion.
+
 (defn xs->m
   "Convert seq to map of val:indices pairs."
   ([xs] (xs->m xs 0 {}))
