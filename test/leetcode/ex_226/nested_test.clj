@@ -1,6 +1,7 @@
-(ns leetcode.ex-226-test
-  (:require [leetcode.ex-226 :as sut]
-            [clojure.test :as t :refer [deftest is testing]]))
+(ns leetcode.ex-226.nested-test
+  (:require
+   [leetcode.ex-226.nested :as sut]
+   [clojure.test :as t :refer [deftest is testing]]))
 
 (deftest invert-binary-tree
   (testing "Example."
